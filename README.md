@@ -49,6 +49,7 @@ var result = Schema.run(dataJSON);
 
 #### Type:
 **String** Validate for type {String}
+```
   * required {Boolean} (default = false)
   * default {String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)
   * format {Array} ['trim','upperCase'] (performed in order)
@@ -80,13 +81,16 @@ var result = Schema.run(dataJSON);
   9. isFullname
   10. isPhoneNumber
   11. isLength(min[,max])
+```
 
 **Object** Validate for type {Object}
+```
   * required {Boolean} (default = false)
   * error {String} - Common override error message for the key
-
+```
 
 **Number** Validate for type {Number}
+```
   * required {Boolean} (default = false)
   * default {String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)
   * format {Array} ['parseInt'] (performed in order)
@@ -99,5 +103,5 @@ var result = Schema.run(dataJSON);
   1. parseInt
 
   **validate options**
-
+```
 
