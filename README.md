@@ -5,12 +5,10 @@ A JSON schema validator and sanitizer for node.js.
 
 #### Note: This is a work in progress, not ready.
 
-#### Require gatekeeper
+#### Usage
 ```js
 var jsonGatekeeper = require('json-gatekeeper');
 
-#### Schema:
-```js
 var schema = {
   name: {
     type: 'string',
