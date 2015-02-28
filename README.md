@@ -2,8 +2,7 @@ json-gatekeeper
 ========
 
 A JSON schema validator and sanitizer for node.js.
-
-#### Note: This is a work in progress, not ready.
+__Note: This is a work in progress, not ready.__
 
 #### Usage
 ```js
@@ -47,17 +46,15 @@ var result = Schema.run(dataJSON);
 * __array__ (constructor === Array)
 
 
-#### Type:
-**String** Validate for type {String}
-```
-  * required {Boolean} (default = false)
-  * default {String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)
-  * format {Array} ['trim','upperCase'] (performed in order)
-  * enum {Array} (permored after format)
-  * validate {Array} ['isEmail', 'isAlpha'] (performed in order)
-  * error {String} - Common override error message for the key
+##### String Validate for type {String}
+  * required `{Boolean} (default = false)`
+  * default `{String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
+  * format `{Array} ['trim','upperCase'] (performed in order)`
+  * enum `{Array} (permored after format)`
+  * validate `{Array} ['isEmail', 'isAlpha'] (performed in order)`
+  * error `{String} - Common override error message for the key`
 
-  **format options available**
+__format options available__
   1. camelCase https://lodash.com/docs#camelCase
   2. capitalize https://lodash.com/docs#capitalize
   3. deburr https://lodash.com/docs#deburr
@@ -66,9 +63,9 @@ var result = Schema.run(dataJSON);
   6. trim
   7. upperCase
   8. lowerCase
-  9. phoneNumber - Removes all formatting/spaces, and outputs just numbers
+  9. phoneNumber - Removes all formatting/spaces, and outputs just numbers. Eg. (800) 123-4567 -> 8001234567
 
-  **validate options available**
+__validate options available__
   1. isEmail
   2. isURL
   3. isAlpha
@@ -81,27 +78,22 @@ var result = Schema.run(dataJSON);
   9. isFullname
   10. isPhoneNumber
   11. isLength(min[,max])
-```
 
-**Object** Validate for type {Object}
-```
-  * required {Boolean} (default = false)
-  * error {String} - Common override error message for the key
-```
+##### Object Validate for type {Object}
+  * required `{Boolean} (default = false)`
+  * error `{String} - Common override error message for the key`
 
-**Number** Validate for type {Number}
-```
-  * required {Boolean} (default = false)
-  * default {String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)
-  * format {Array} ['parseInt'] (performed in order)
-  * min {Number} Checks for min (permored after sanitize)
-  * max {Number} Checks for max (permored after sanitize)
-  * enum {Array} (permored after sanitize)
-  * validate {Array} ['doSomething'] (performed in order)
+##### Number Validate for type {Number}
+  * required `{Boolean} (default = false)`
+  * default `{String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
+  * format `{Array} ['parseInt'] (performed in order)`
+  * enum `{Array} (permored after format)`
+  * validate `{Array} ['isMin(10)'] (performed in order)`
+  * error `{String} - Common override error message for the key`
 
-  **format options available**
-  1. parseInt
+__format options available__
+  1. parseInt - Type casts String to Integer
 
-  **validate options**
-```
-
+__validate options__
+  1. isMin(min)
+  2. isMax(max)
