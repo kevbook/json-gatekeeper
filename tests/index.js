@@ -33,7 +33,11 @@ var schema = {
 var Schema = jsonGatekeeper(schema);
 
 // Gate the JSON object
-var dataJSON = {};
+var dataJSON = {
+  address: {
+    city: 'Kevin sdfdsf'
+  }
+};
 
 var result = Schema.run(dataJSON);
 console.log('------------------');
