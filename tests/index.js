@@ -4,27 +4,39 @@ var jsonGatekeeper = require('../index');
 
 
 var schema = {
-  first_name: {
+  a: {
     type: 'string',
     required: true,
-    format: ['camelCase','trim']
+    default: 'superman',
+    format: ['trim','camelCase']
   },
-  second_name: {
-    type: 'string',
-    required: true,
-    format: ['camelCase'],
-    error: 'Crap failed, bro.'
+  b: {
+    type: 'object',
+    properties: {
+      c: {
+        type: 'string',
+        format: ['trim','capitalize']
+      },
+      d: {
+        type: 'string',
+        required: true,
+        default: 'damnddd',
+        error: 'Name needed.'
+      }
+    }
   },
-  address: {
+  f: {
     type: 'object',
     required: true,
+    error: 'F failed man',
     properties: {
-      city: {
+      g: {
         type: 'string',
+        enum: ['cool', 'person']
       },
-      name: {
+      d: {
         type: 'string',
-        required: true
+        validate: ['isEmail']
       }
     }
   }
@@ -34,14 +46,18 @@ var Schema = jsonGatekeeper(schema);
 
 // Gate the JSON object
 var dataJSON = {
-  address: {
-    city: 'Kevin sdfdsf'
-  }
+  a: 'Ran some',
+  f: {
+    a: new Date(),
+    g: 'person',
+    d: 'kevin@evin.com'
+  },
+  stuff: {
+    grr: null,
+    city: '    jacksonville '
+  },
+  stuff2: 'Kevin sak'
 };
 
 var result = Schema.run(dataJSON);
-console.log('------------------');
-console.log(Schema)
-console.log('--------result-------');
 console.log(result);
-

@@ -1,7 +1,8 @@
 
 var _ = require('lodash'),
   buildSchema = require('./lib/build_schema'),
-  runSchema = require('./lib/run_schema');
+  runSchema = require('./lib/run_schema'),
+  deepFreeze = require('deep-freeze-strict');
 
 
 function Gatekeeper(schema) {
@@ -16,5 +17,6 @@ module.exports = function(schema) {
   if (!_.isPlainObject(schema))
     throw new Error('schema is either missing or is not a valid object.');
 
-  return new Gatekeeper(schema);
+  // Deep freeze the result object
+  return deepFreeze(new Gatekeeper(schema));
 };
