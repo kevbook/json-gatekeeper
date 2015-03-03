@@ -14,17 +14,24 @@ var schema = {
     required: true,
     format: ['camelCase']
   },
+  email: {
+    type: 'string',
+    validate: ['isEmail'],
+    required: true,
+    default: 'info@sample.com'
+  },
   address: {
     type: 'object',
     required: true,
     properties: {
       city: {
-        type: 'string'
+        type: 'string',
+        enum: ['nyc', 'san fran']
       }
       name: {
         type: 'string',
         required: true,
-        error: 'City needed.'
+        error: 'Name needed.'
       }
     }
   }
@@ -34,8 +41,13 @@ var schema = {
 var Schema = jsonGatekeeper.build(schema);
 
 // Gate the JSON object
-var dataJSON = {};
+var dataJSON = {
+  name: 'Abc',
+  email: 'kevin@kevin.com',
+};
+
 var result = Schema.run(dataJSON);
+// { data: {Object} , error: {Boolean}, errors: {Array} }
 ```
 
 #### Types Available:
@@ -47,8 +59,9 @@ var result = Schema.run(dataJSON);
 * __null__
 * __array__ (constructor === Array)
 
+----
 
-##### String Validate for type {String}
+##### type {String}
   * required `{Boolean} (default = false)`
   * default `{String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * format `{Array} ['trim','upperCase'] (performed in order)`
@@ -85,11 +98,15 @@ __validate options available__
   14. isLength(min[,max])
   15. isCreditCard
 
-##### Object Validate for type {Object}
+----
+
+##### type {Object}
   * required `{Boolean} (default = false)`
   * error `{String} - Common override error message for the key`
 
-##### Number Validate for type {Number}
+----
+
+##### type {Number}
   * required `{Boolean} (default = false)`
   * default `{String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * typeCast `{Boolean} (default = true)`
@@ -107,7 +124,9 @@ __validate options__
   3. isInt
   4. isFloat
 
-##### Date Validate for type {Date}
+---
+
+##### type {Date}
   * required `{Boolean} (default = false)`
   * default `{Date} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * typeCast `{Boolean} (default = true)`
@@ -118,14 +137,17 @@ __validate options__
   1. isAfter([date]) - defaults to now
   2. isBefore([date]) - defaults to now
 
+---
+
 ##### Boolean Validate for type {Boolean}
   * required `{Boolean} (default = false)`
   * default `{Boolean} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * typeCast `{Boolean} (default = true)`
   * error `{String} - Common override error message for the key`
 
+---
+
 ##### Null Validate for type {null}
   * required `{Boolean} (default = false)`
   * default `{Null} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * error `{String} - Common override error message for the key`
-
