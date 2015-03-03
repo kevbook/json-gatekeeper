@@ -1,5 +1,6 @@
 {
-  "name": "gatekeeper",
+  "name": "json-gatekeeper",
+  "author": "Karan Sakhuja",
   "version": "0.0.1",
   "description": "A JS Object schema validator and sanitizer",
   "keywords": [
@@ -11,13 +12,12 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "lodash": "latest",
-    "validator": "latest",
+    "lodash": "3.3.1",
+    "validator": "3.33.0",
     "deep-freeze-strict": "latest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kevbook/gatekeeper.git"
-  },
-  "author": "Karan Sakhuja"
+    "url": "https://github.com/kevbook/json-gatekeeper.git"
+  }
 }
