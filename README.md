@@ -61,7 +61,7 @@ var result = Schema.run(dataJSON);
 
 ----
 
-##### type {String}
+##### type `string`
   * required `{Boolean} (default = false)`
   * default `{String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * format `{Array} ['trim','upperCase'] (performed in order)`
@@ -100,13 +100,13 @@ __validate options available__
 
 ----
 
-##### type {Object}
+##### type `object`
   * required `{Boolean} (default = false)`
   * error `{String} - Common override error message for the key`
 
 ----
 
-##### type {Number}
+##### type `number`
   * required `{Boolean} (default = false)`
   * default `{String} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * typeCast `{Boolean} (default = true)`
@@ -126,7 +126,7 @@ __validate options__
 
 ---
 
-##### type {Date}
+##### type `date`
   * required `{Boolean} (default = false)`
   * default `{Date} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * typeCast `{Boolean} (default = true)`
@@ -139,7 +139,7 @@ __validate options__
 
 ---
 
-##### Boolean Validate for type {Boolean}
+##### type `boolean`
   * required `{Boolean} (default = false)`
   * default `{Boolean} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * typeCast `{Boolean} (default = true)`
@@ -147,7 +147,7 @@ __validate options__
 
 ---
 
-##### Null Validate for type {null}
+##### type `null`
   * required `{Boolean} (default = false)`
   * default `{Null} (If required=true, and key doesnt exist, default value is used, all other sanitizers and validations are skipped)`
   * error `{String} - Common override error message for the key`
