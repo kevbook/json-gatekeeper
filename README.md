@@ -117,6 +117,7 @@ __validate options available__
 
 __format options available__
   1. toInt - Type casts to Integer if Float
+  2. roundFloat(digits) - default 4 places
 
 __validate options__
   1. isMin(min)
