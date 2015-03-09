@@ -54,10 +54,10 @@ var result = Schema.run(dataJSON);
 * __string__
 * __number__
 * __boolean__
-* __date__ (constructor === Date)
-* __object__ (constructor === Object)
+* __date__
+* __object__
 * __null__
-* __array__ (constructor === Array)
+* __array__
 
 ----
 
