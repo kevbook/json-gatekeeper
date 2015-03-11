@@ -163,50 +163,59 @@ var schema = {
     required: true,
     default: null
   },
-
-
-
-
-
-/******
-
-  : {
+  obj1: {
+    type: 'object'
+  },
+  obj2: {
+    type: 'object',
+    properties: 'sss'
+  },
+  obj3: {
+    type: 'object',
+    properties: {}
+  },
+  obj4: {
     type: 'object',
     properties: {
-      c: {
+      str1: {
+        type: 'crap'
+      }
+    }
+  },
+  obj5: {
+    type: 'object',
+    properties: {
+      str2: {
         type: 'string',
-        format: ['trim','capitalize']
+        default: 'superman',
+        format: ['trim','camelCase']
       },
-      d: {
+      str3: {
         type: 'string',
+        error: 'Crap man',
+        format: ['trim','camelCase']
+      },
+      null2: {
+        type: 'null',
         required: true,
-        default: 'damnddd',
-        error: 'Name needed.'
-      }
-    }
-  },
-  f: {
-    type: 'object',
-    required: true,
-    error: 'F failed man',
-    properties: {
-      g: {
-        type: 'string',
-        enum: ['cool', 'person']
+        default: null
       },
-      d: {
-        type: 'string',
-        validate: ['isEmail']
+      date10: {
+        type: 'date',
+        required: true,
+        default: new Date('10-1-2015'),
+        typeCast: true,
+        format: [],
+        validate: ['isAfter()']
+      },
+      number3: {
+        type: 'number',
+        required: true,
+        default: -123.4444,
+        format: ['toInt']
       }
     }
   },
-  num: {
-    type: 'number',
-    required: true,
-    default: 1000.300,
-    format: ['roundFloat']
-  }
-  ***/
 };
 
 function Schema() {
