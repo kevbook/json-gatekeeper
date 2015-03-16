@@ -186,7 +186,6 @@ module.exports = function(Schema, jsonGatekeeper) {
       .throwError(/type/i);
     });
 
-    // ******** Test ********/
     it('should work, returns an object with "schema" key', function() {
       var s = cleanup( Schema() );
 

@@ -147,7 +147,7 @@ var schema = {
   date10: {
     type: 'date',
     required: true,
-    default: new Date('10-1-2015'),
+    default: new Date('10-1-2014'),
     typeCast: true,
     format: [],
     validate: ['isAfter()']
@@ -227,25 +227,8 @@ function Schema() {
  * Build Schema
  **/
 require('./build')(Schema, jsonGatekeeper);
+require('./run')(Schema, jsonGatekeeper);
 
-
-
-
-// // Gate the JSON object
-// var dataJSON = {
-//   a: 'Ran some',
-//   f: {
-//     a: new Date(),
-//     g: 'person',
-//     d: 'kevin@evin.com'
-//   },
-//   num: -20.103333,
-//   stuff: {
-//     grr: null,
-//     city: '    jacksonville '
-//   },
-//   stuff2: 'Kevin sak'
-// };
 
 // var result = Schema.run(dataJSON);
 // console.log(result);
