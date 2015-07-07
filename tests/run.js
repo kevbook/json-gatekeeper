@@ -23,6 +23,18 @@ module.exports = function(Schema, jsonGatekeeper) {
       var data = {};
 
       var result = s.run(data);
+      console.log(result);
+
+      result.should
+        .be.an.Object
+        .and.have.keys('error', 'errors', 'data')
+        .and.have.property('error', true);
+
+        // str1: 'superman'
+        // number3: -123
+        // data5: new Date('10-1-2015')
+        // date6: new Date('10-1-2015'),
+        // date7: new Date('10-1-2015'),
 
     });
 

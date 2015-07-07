@@ -68,6 +68,7 @@ var result = Schema.run(dataJSON);
   * enum `{Array} (permored after format)`
   * validate `{Array} ['isEmail', 'isAlpha'] (performed in order)`
   * error `{String} - Common override error message for the key`
+  * label `{String} - Override error message but label is used instead of the key`
 
 __format options available__
   1. camelCase https://lodash.com/docs#camelCase
@@ -97,6 +98,8 @@ __validate options available__
   13. isPhoneNumber
   14. isLength(min[,max])
   15. isCreditCard
+  16. isDate - String is a date string eg. 10/1/2015 (Date.parse)
+  17. isBlacklist
 
 ----
 

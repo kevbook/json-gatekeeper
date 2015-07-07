@@ -229,6 +229,3 @@ function Schema() {
 require('./build')(Schema, jsonGatekeeper);
 require('./run')(Schema, jsonGatekeeper);
 
-
-// var result = Schema.run(dataJSON);
-// console.log(result);
